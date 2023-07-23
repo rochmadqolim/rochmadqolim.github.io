@@ -281,17 +281,15 @@
         btnLoading.classList.toggle('d-none');
         btnSend.classList.toggle('d-none');
 
-        // Tampilkan alert
-        myAlert.classList.toggle('d-none');
-
-        // reset form
-        form.reset();
-
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
           .then((response) => {
             // tampilkan tombol kirim, hilangkan tombol loading
             btnLoading.classList.toggle('d-none');
             btnSend.classList.toggle('d-none');
+            // Tampilkan alert
+            myAlert.classList.toggle('d-none');
+            // reset form
+            form.reset();
             console.log('Success!', response);
           })
           .catch((error) => console.error('Error!', error.message));
